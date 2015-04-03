@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>RWD</title>
+</head>
+<body>
+<h1>
+    Tech Talk: Intro to Responsive Web Design
+</h1>
+<p>
+    The <a target="_blank" href="http://www.four51.com">Four51 OrderCloud</a> solution introduces a better user experience with responsive web design, we’ll call this phone, tablet and desktop view.
+    These views can be used to display your content across multiple screen sizes.
+    The default design is flexible, and works right out of the box. However, there are times that creating additional design
+    around these views is required. Let’s take a look at that design framework and touch on some of the features it provides:
+</p>
+<h2>
+    Bootstrap
+</h2>
+<p>
+    <a target="_blank" href="http://getbootstrap.com/">Bootstrap</a> is the design framework used for OrderCloud. The CSS rule sets allow OrderCloud to display across multiple views.
+    This means that when you are viewing the app on your desktop, you will get a desktop experience. When you are viewing the app on your tablet or phone, you will get a tablet or phone experience.
+</p>
+
+<h3>
+    Media Queries
+</h3>
+<p>
+    Media queries are what define the style sheets scope by using media features.  The media query is the CSS rule set that contains all the properties that make up the design for phone, tablet and desktop view.
+    Specific properties are assigned as class names in the HTML.
+    For example, if you wanted to display content on desktop but hide it on phone, you could use the class name <code>hidden-xs</code>.
+</p>
+<h3>
+    Adding Additional Design
+</h3>
+<p>
+    To build on the above example, Bootstrap makes use of specific class names.
+    In the case of our navigation, we’re accessing a media query for phone view to hide the link text.
+    So, we can provide a better phone experience for navigation to only display the navigation icons.
+    Let’s take a look at an example of how this works:
+</p>
+<pre>
+    HTML
+    &lt;li class="products"&gt;
+        &lt;a href="catalog" id="451qa_home_link"&gt;
+            &lt;i class="fa fa-home"&gt;&lt;/i&gt;
+            &lt;span class="hidden-xs">Products&lt;/span&gt;
+        &lt;/a&gt;
+    &lt;/li&gt;
+
+    CSS
+    @media (max-width: 767px) {
+        .hidden-xs {
+            display: none !important;
+        }
+    }
+</pre>
+<p>
+    Notice the Bootstrap class name on the <code>span</code> element. This is defined in the media query to be hidden for the phone view.
+    When adding additional design to the navigation, first consider how users look for information, and then design in a way that best aligns with those preferences for each view.
+</p>
+<p>
+    I designed OrderCloud to work for the largest possible percentage of your target audience for phone, tablet and desktop views.
+</p>
+<p>
+    Capabilities exist to add additional responsive web design to the entirety of OrderCloud.
+    Here is an example of how different media queries can be accessed in the CSS for phone, tablet and desktop views:
+</p>
+<pre>
+	/* Extra small devices (phones, less than 768px) */
+	@media (max-width: 767px) { ... }
+
+	/* Small devices (tablets, 768px and up) */
+	@media (min-width: 768px) { ... }
+
+	/* Medium devices (desktops, 992px and up) */
+	@media (min-width: 992px) { ... }
+
+	/* Large devices (large desktops, 1200px and up) */
+	@media (min-width: 1200) { ... }
+</pre>
+<p>
+    One of the most important aspects of designing responsive web design is prioritizing content for different screen sizes. This example shows how responsive web design works at a fundamental level.
+</p>
+<p>
+    This is only an introduction to responsive web design. Bootstrap makes its learning curve worth the effort, and we’ll continue to examine design options as they relate to OrderCloud.
+</p>
+<p>
+    What design options are you interested in learning more about? Let us know below.
+</p>
+</body>
+</html>
+</body>
+</html>
