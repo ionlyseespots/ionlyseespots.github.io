@@ -245,12 +245,19 @@ Content-Type: application/json
             </p>
             <hr />
 
-            <p>
-                <strong>id</strong> <code>string</code> (required) Example: 68a5sdf67
-            </p>
-            <p>
-                The note ID
-            </p>
+            <dl>
+                <dt>
+                    <strong>id</strong>
+                </dt>
+                <dd>
+                    <p>
+                        <code>string</code> (required) Example: 68a5sdf67
+                    </p>
+                    <p>
+                        The note ID
+                    </p>
+                </dd>
+            </dl>
             <hr />
 
             <p>
@@ -329,12 +336,19 @@ X-Response-Time: 4ms
             </p>
             <hr />
 
-            <p>
-                <strong>id</strong> <code>string</code> (required) Example: 68a5sdf67
-            </p>
-            <p>
-                The note ID
-            </p>
+            <dl>
+                <dt>
+                    <strong>id</strong>
+                </dt>
+                <dd>
+                    <p>
+                        <code>string</code> (required) Example: 68a5sdf67
+                    </p>
+                    <p>
+                        The note ID
+                    </p>
+                </dd>
+            </dl>
             <hr />
 
             <p>
@@ -438,12 +452,19 @@ X-Response-Time: 4ms
             </p>
             <hr />
 
-            <p>
-                <strong>id</strong> <code>string</code> (required) Example: 68a5sdf67
-            </p>
-            <p>
-                The note ID
-            </p>
+            <dl>
+                <dt>
+                    <strong>id</strong>
+                </dt>
+                <dd>
+                    <p>
+                        <code>string</code> (required) Example: 68a5sdf67
+                    </p>
+                    <p>
+                        The note ID
+                    </p>
+                </dd>
+            </dl>
             <hr />
 
             <p>
@@ -488,11 +509,106 @@ X-Response-Time: 4ms
             Group description
         </p>
         <h2>
-            USer list
+            User list
         </h2>
         <p>
             A list of users
         </p>
+        <section>
+            <header class="am-clr-6-bg">
+                <h1>
+                    GET <code>/users{?name,joinedBefore,joinedAfter,sort,limit}</code>
+                </h1>
+                <h2>
+                    get users
+                </h2>
+            </header>
+            <p>
+                Get a list of users. Example:
+            </p>
+            <pre>
+                <code>
+https://api.mywebsite.com/users?sort=joined&limit=5
+                </code>
+            </pre>
+            <hr />
+
+            <p>
+                <strong>Parameters</strong>
+            </p>
+            <hr />
+
+            <dl>
+                <dt>
+                    <strong>name</strong>
+                </dt>
+                <dd>
+                    <p>
+                        <code>string</code> (optional) Example: 68a5sdf67
+                    </p>
+                    <p>
+                        Search for a user by name
+                    </p>
+
+                </dd>
+
+                <dt>
+                    <strong>joinedBefore</strong>
+                </dt>
+                <dd>
+                    <p>
+                        <code>string</code> (optional) Example: 2011-01-01
+                    </p>
+                    <p>
+                        Search by join date
+                    </p>
+
+                </dd>
+
+                <dt>
+                    <strong>joinedAfter</strong>
+                </dt>
+                <dd>
+                    <p>
+                        <code>string</code> (optional) Example: 2011-01-01
+                    </p>
+                    <p>
+                        Search by join date
+                    </p>
+
+                </dd>
+
+                <dt>
+                    <strong>sort</strong>
+                </dt>
+                <dd>
+                    <p>
+                        <code>string</code> (optional) Default: name Example: joined
+                    </p>
+                    <p>
+                        Which field to sort by
+                    </p>
+                    <p>
+                        <strong>Choices:</strong> <code>name</code> <code>joined</code>  <code>-joined</code> <code>age</code> <code>-age</code> <code>location</code> <code>-location</code> <code>plan</code> <code>-plan</code>
+
+                    </p>
+                </dd>
+
+                <dt>
+                    <strong>limit</strong>
+                </dt>
+                <dd>
+                    <p>
+                        <code>integer</code> (optional) Default: 10 Example: 25
+                    </p>
+                    <p>
+                       The maximum number of users to return, up to <code>50</code>
+                   </p>
+                </dd>
+            </dl>
+            <hr />
+
+        </section>
     </article>
 </main>
 </body>
