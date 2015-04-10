@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>API ala carte</title>
+    <!-- Ambient -->
+    <link rel="stylesheet" href="ambient.min.css">
+</head>
+<body>
+<!--Resource group-->
+<aside am-padding>
+    <nav am-layout="vertical">
+        <h1>
+            Notes
+        </h1>
+        <a href="">Note list</a>
+        <nav>
+            <a href="">Get notes</a>
+            <a href="">Create new notes</a>
+        </nav>
+
+        <a href="">Notes</a>
+        <nav am-layout="vertical">
+            <a href="">Get notes</a>
+            <a href="">Update a note</a>
+            <a href="">Delete a note</a>
+        </nav>
+    </nav>
+    <hr />
+
+    <nav am-layout="vertical">
+        <h1>
+            Users
+        </h1>
+        <a href="">User list</a>
+    </nav>
+    <hr />
+
+    <nav am-layout="vertical">
+        <h1>
+            Tags and tagging long title
+        </h1>
+        <a href="">GET /tags</a>
+        <a href="">Get one tag</a>
+    </nav>
+    <footer>
+        <p>
+            <a href="">https://api.mywebsite.com</a>
+        </p>
+    </footer>
+</aside>
+<main am-padding="large">
+    <header>
+        <h1>
+            API Title
+        </h1>
+        <hr />
+
+        <p>
+            Markdown formatted description
+        </p>
+        <h2>
+            Subtitle
+        </h2>
+        <p>
+            Also Markdown <i>formatted.</i> This also includes automatic “smartypants” formatting — hooray!
+        </p>
+        <blockquote>
+            <p>
+                “A quote from another time and place”
+            </p>
+        </blockquote>
+        <p>
+            Another paragraph. Code sample:
+        </p>
+        <pre>
+<code>
+    Authorization: bearer 5262d64b892e8d4341000001
+</code>
+        </pre>
+    </header>
+
+    <article am-layout="vertical">
+        <h1>
+            Notes
+        </h1>
+        <p>
+            Group description (also with Markdown)
+        </p>
+        <h2>
+            Note list
+        </h2>
+        <p>
+            Note list description
+        </p>
+        <ul>
+            <li>Even</li>
+            <li>More</li>
+            <li>Markdown</li>
+        </ul>
+        <section>
+            <header class="am-clr-6-bg">
+                <h1>
+                    GET <code>/notes</code>
+                </h1>
+                <h2>
+                    get notes
+                </h2>
+            </header>
+            <p>
+                Get a list of notes
+            </p>
+            <hr />
+
+            <p>
+                <strong>Response <code>200</code></strong>
+            </p>
+            <hr />
+
+            <h3>
+                Headers
+            </h3>
+            <pre>
+                <code>
+Content-Type: application/json
+X-Request-ID: f72fc914
+X-Response-Time: 4ms
+                </code>
+            </pre>
+            <h3>
+                Body
+            </h3>
+            <pre>
+                <code>
+[
+    {
+        "id": 1,
+        "title": "Grocery list",
+        "body": "Buy milk"
+        },
+        {
+        "id": 2,
+        "title": "TODO",
+        "body": "Fix garage door"
+    }
+]
+                </code>
+            </pre>
+        </section>
+        <hr />
+
+        <section>
+            <header class="am-clr-10-bg">
+                <h1>
+                    POST <code>/notes</code>
+                </h1>
+                <h2>
+                    create a new note
+                </h2>
+            </header>
+            <p>
+                Create a new note
+            </p>
+            <hr />
+
+            <p>
+                <strong>Request</strong>
+            </p>
+            <hr />
+
+            <h3>
+                Headers
+            </h3>
+            <pre>
+                <code>
+Content-Type: application/json
+                </code>
+            </pre>
+            <h3>
+                Body
+            </h3>
+            <pre>
+                <code>
+{
+    "title": "My new note",
+    "body": "..."
+}
+                </code>
+            </pre>
+            <hr />
+
+            <p>
+                <strong>Response <code>201</code></strong>
+            </p>
+            <hr />
+
+            <p>
+                <strong>Response <code>400</code></strong>
+            </p>
+            <hr />
+
+            <h3>
+                Headers
+            </h3>
+            <pre>
+                <code>
+Content-Type: application/json
+                </code>
+            </pre>
+            <h3>
+                Body
+            </h3>
+            <pre>
+                <code>
+{
+    "error": "Invalid title"
+}
+                </code>
+            </pre>
+        </section>
+        <hr />
+
+        <h2>
+            Note
+        </h2>
+        <p>
+            Note description
+        </p>
+        <section>
+            <header class="am-clr-6-bg">
+                <h1>
+                    GET <code>/notes/{id}</code>
+                </h1>
+                <h2>
+                    get note
+                </h2>
+            </header>
+            <p>
+                Get a single note.
+            </p>
+            <hr />
+
+            <p>
+                <strong>Parameters</strong>
+            </p>
+            <hr />
+
+            <p>
+                <strong>id</strong> <code>string</code> (required) Example: 68a5sdf67
+            </p>
+            <p>
+                The note ID
+            </p>
+            <hr />
+
+            <p>
+                <strong>Response <code>200</code></strong>
+            </p>
+            <hr />
+
+            <h3>
+                Headers
+            </h3>
+            <pre>
+                <code>
+Content-Type: application/json
+X-Request-ID: f72fc914
+X-Response-Time: 4ms
+                </code>
+            </pre>
+            <h3>
+                Body
+            </h3>
+            <pre>
+                <code>
+{
+    "id": 1,
+    "title": "Grocery list",
+    "body": "Buy milk"
+}
+                </code>
+            </pre>
+            <hr />
+
+            <p>
+                <strong>Response <code>404</code></strong>
+            </p>
+            <hr />
+
+            <h3>
+                Headers
+            </h3>
+            <pre>
+                <code>
+Content-Type: application/json
+X-Request-ID: f72fc914
+X-Response-Time: 4ms
+                </code>
+            </pre>
+            <h3>
+                Body
+            </h3>
+            <pre>
+                <code>
+{
+    "error": "Note not found"
+}
+                </code>
+            </pre>
+        </section>
+        <hr />
+
+        <section>
+            <header class="am-clr-15-bg">
+                <h1>
+                    PUT <code>/notes/{id}</code>
+                </h1>
+                <h2>
+                    update a note
+                </h2>
+            </header>
+            <p>
+                Update a single note.
+            </p>
+            <hr />
+
+            <p>
+                <strong>Parameters</strong>
+            </p>
+            <hr />
+
+            <p>
+                <strong>id</strong> <code>string</code> (required) Example: 68a5sdf67
+            </p>
+            <p>
+                The note ID
+            </p>
+            <hr />
+
+            <p>
+                <strong>Request </strong>
+            </p>
+            <hr />
+
+            <h3>
+                Headers
+            </h3>
+            <pre>
+                <code>
+Content-Type: application/json
+                </code>
+            </pre>
+            <h3>
+                Body
+            </h3>
+            <pre>
+                <code>
+{
+    "title": "Grocery List (Safeway)"
+}
+                </code>
+            </pre>
+            <hr />
+
+            <p>
+                <strong>Response <code>200</code> </strong>
+            </p>
+            <hr />
+
+            <h3>
+                Headers
+            </h3>
+            <pre>
+                <code>
+Content-Type: application/json
+X-Request-ID: f72fc914
+X-Response-Time: 4ms
+                </code>
+            </pre>
+            <h3>
+                Body
+            </h3>
+            <pre>
+                <code>
+{
+    "id": 1,
+    "title": "Grocery list",
+    "body": "Buy milk"
+}
+                </code>
+            </pre>
+            <hr />
+
+            <p>
+                <strong>Response <code>404</code> </strong>
+            </p>
+            <hr />
+
+            <h3>
+                Headers
+            </h3>
+            <pre>
+                <code>
+Content-Type: application/json
+X-Request-ID: f72fc914
+X-Response-Time: 4ms
+                </code>
+            </pre>
+            <h3>
+                Body
+            </h3>
+            <pre>
+                <code>
+{
+    "error": "Note not found"
+}
+                </code>
+            </pre>
+        </section>
+        <hr />
+
+        <section>
+            <header class="am-clr-1-bg">
+                <h1>
+                    DELETE <code>/notes/{id}</code>
+                </h1>
+                <h2>
+                    delete a new note
+                </h2>
+            </header>
+            <p>
+                Delete a single note.
+            </p>
+            <hr />
+
+            <p>
+                <strong>Parameters</strong>
+            </p>
+            <hr />
+
+            <p>
+                <strong>id</strong> <code>string</code> (required) Example: 68a5sdf67
+            </p>
+            <p>
+                The note ID
+            </p>
+            <hr />
+
+            <p>
+                <strong>Response <code>204</code> </strong>
+            </p>
+            <hr />
+
+            <p>
+                <strong>Response <code>404</code> </strong>
+            </p>
+            <hr />
+
+            <h3>
+                Headers
+            </h3>
+            <pre>
+                <code>
+Content-Type: application/json
+X-Request-ID: f72fc914
+X-Response-Time: 4ms
+                </code>
+            </pre>
+            <h3>
+                Body
+            </h3>
+            <pre>
+                <code>
+{
+    "error": "Note not found"
+}
+                </code>
+            </pre>
+        </section>
+    </article>
+    <hr />
+
+    <article>
+        <h1>
+            Users
+        </h1>
+        <p>
+            Group description
+        </p>
+        <h2>
+            USer list
+        </h2>
+        <p>
+            A list of users
+        </p>
+    </article>
+</main>
+</body>
+</html>
